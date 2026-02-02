@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Registration | MentorLink</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-card animate">
+    <h1>Mentor Registration</h1>
+    <p>Fill the details to become a mentor</p>
+
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="text" id="dept" placeholder="Department" />
+      <input type="text" id="exp" placeholder="Experience (years)" />
+      <textarea id="bio" placeholder="Bio"></textarea>
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="auth-links">
+      <a href="index.html">Already have an account? Login</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const registerForm = document.getElementById("registerForm");
+
+registerForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // prevent default form submit
+
+  // Get form values
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const dept = document.getElementById("dept").value.trim();
+  const exp = document.getElementById("exp").value.trim();
+  const bio = document.getElementById("bio").value.trim();
+
+  // Save mentor profile
+  const mentorProfile = { name, email, password, dept, exp, bio };
+  localStorage.setItem("mentorProfile", JSON.stringify(mentorProfile));
+
+  // Set session for auto-login
+  const SESSION_TIME = 30 * 60 * 1000; // 30 minutes
+  localStorage.setItem("loggedInUser", JSON.stringify({
+    role: "mentor",
+    email,
+    expiry: Date.now() + SESSION_TIME
+  }));
+
+  // Show success message
+  alert("You have successfully registered!");
+
+  // Redirect to mentor dashboard
+  window.location.href = "mentor-dashboard.html";
+});
+</script>
+
+</body>
+</html>

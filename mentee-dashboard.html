@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentee Dashboard | MentorLink</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="logo">MentorLink</div>
+    <nav>
+      <a class="active">Dashboard</a>
+      <a onclick="logout()">Logout</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h2>Mentee Dashboard</h2>
+    </header>
+
+    <section class="content">
+      <div class="session-card" id="sessionBox">
+        <h3>Communication Session</h3>
+        <p>Date: <span id="sDate">—</span></p>
+        <p>Time: <span id="sTime">—</span></p>
+        <p>Status: <span class="status">Scheduled</span></p>
+        <a id="joinLink" class="join" target="_blank">Join Meet</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="./js/dashboard.js"></script>
+</body>
+</html>
