@@ -2,41 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mentee Registration</title>
+  <title>Register Mentee | MentorLink</title>
   <link rel="stylesheet" href="css/auth.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div class="auth-wrapper">
+    <div class="auth-card animate">
+      <div class="logo">MentorLink</div>
+      <h1>Join as Mentee</h1>
+      <p>Connect with your mentor</p>
 
-<div class="auth-wrapper">
-  <div class="auth-card animate">
-    <h1>Mentee Registration</h1>
-    <p>Start improving your communication skills</p>
+      <form id="menteeRegisterForm">
+        <input type="text" id="menteeName" placeholder="Full Name" required>
+        <input type="email" id="menteeEmail" placeholder="Email address" required>
+        <input type="password" id="menteePassword" placeholder="Password" required>
+        <input type="text" id="menteeEdu" placeholder="Education" required>
+        <input type="text" id="menteeDept" placeholder="Department" required>
+        <textarea id="menteeGoal" placeholder="Career Goal" rows="3" required></textarea>
+        <button type="submit">Register as Mentee</button>
+      </form>
 
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-
-      <select required>
-        <option value="">Current Education Status</option>
-        <option>Undergraduate</option>
-        <option>Postgraduate</option>
-        <option>Diploma</option>
-        <option>School Student</option>
-      </select>
-
-      <input type="text" placeholder="Department / Course">
-      <textarea placeholder="What do you want to improve? (optional)"></textarea>
-
-      <button type="submit">Create Account</button>
-    </form>
-
-    <div class="auth-links">
-      <a href="index.html">Already have an account?</a>
+      <div class="auth-links">
+        <a href="index.html">← Back to Login</a>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="js/auth.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
