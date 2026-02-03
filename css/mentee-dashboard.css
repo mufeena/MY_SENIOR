@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #eef1fb;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #5f6bdc, #6a5acd);
+  color: white;
+  padding: 30px 20px;
+}
+
+.logo {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(255,255,255,0.2);
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+  background: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-btn {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  padding: 30px;
+}
+
+/* SESSION CARD */
+.session-card {
+  background: linear-gradient(135deg, #6a5acd, #7b68ee);
+  color: white;
+  padding: 25px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  animation: fadeUp 0.6s ease;
+}
+
+.join-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: white;
+  color: #6a5acd;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.status.live { color: #22c55e; }
+.status.ended { color: #f87171; }
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.msg-section ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.msg-section li {
+  background: #f4f6ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+/* DRAWER */
+.drawer {
+  position: fixed;
+  right: -360px;
+  top: 0;
+  width: 360px;
+  height: 100%;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  background: #6a5acd;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.drawer-body {
+  padding: 20px;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+/* TASK LIST */
+.task-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.task-list li {
+  background: #f4f6ff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeUp 0.4s ease;
+}
+
+.task-title {
+  font-size: 14px;
+}
+
+.task-due {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #6a5acd;
+  color: white;
+}
+/* Fix for Mentee Dashboard - Task Status Button */
+.task-status-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.task-status-card p {
+  margin-bottom: 16px;
+}
+
+.task-status-btn {
+  width: 100% !important;
+  margin-top: auto;
+  padding: 14px !important;
+  font-size: 16px !important;
+}
+.card-button {
+  width: 50% !important;
+  padding: 14px !important;
+  font-size: 16px !important;
+  margin-top: 16px !important;
+}
